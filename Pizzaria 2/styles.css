@@ -6,10 +6,11 @@ body {
     background-color: #121212;
     color: #ffffff;
     text-align: center;
+    overflow-x: hidden; /* Remove barra de rolagem lateral */
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -36,7 +37,7 @@ header h1 {
 
 .carousel-wrapper {
     position: relative;
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
     overflow: hidden;
 }
@@ -103,7 +104,16 @@ footer {
 
 @media (max-width: 768px) {
     .container {
-        width: 100%;
+        width: 95%;
         padding: 0 10px;
+    }
+
+    .carousel-slide .info {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button.prev, button.next {
+        padding: 8px;
     }
 }
