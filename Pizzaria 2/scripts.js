@@ -55,16 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
         }
     
-        // Mostrar a notificação com a mensagem desejada
+        // Mostrar a notificação com a mensagem desejada quando a página é carregada
         showNotification('Disponível para encomenda');
-    
-        // Opcional: Fechar a notificação ao clicar nela
-        notification.addEventListener('click', () => {
-            notification.classList.add('hide');
-            notification.classList.remove('show');
-        });
     });
-    
     
     
 });
