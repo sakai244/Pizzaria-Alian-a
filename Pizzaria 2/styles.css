@@ -7,6 +7,7 @@ body {
     color: #ffffff;
     text-align: center;
     overflow-x: hidden; /* Remove barra de rolagem lateral */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .container {
@@ -21,7 +22,7 @@ header {
     padding: 10px 0;
 }
 
-header h1 {
+header h1, header p {
     margin: 0;
 }
 
@@ -42,9 +43,9 @@ header h1 {
     overflow: hidden;
 }
 
-.carousel-slides {
+.carousel-slides, .carousel-slides-esfirra {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; /* Transição suave */
 }
 
 .carousel-slide {
@@ -70,7 +71,21 @@ header h1 {
     border-radius: 5px;
 }
 
-button.prev, button.next {
+.carousel-slide .info h3 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel-slide .info .price {
+    background-color: #ff6347;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+button.prev, button.next, button.prev-esfirra, button.next-esfirra {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -90,9 +105,31 @@ button.next {
     right: 10px;
 }
 
+button.prev-esfirra {
+    left: 10px;
+}
+
+button.next-esfirra {
+    right: 10px;
+}
+
 .contact {
     background-color: #2e2e2e;
     padding: 20px 0;
+    text-align: center;
+}
+
+.contact p {
+    margin: 5px 0;
+}
+
+.contact a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -113,8 +150,43 @@ footer {
         padding: 8px;
     }
 
-    button.prev, button.next {
+    .carousel-slide .info .price {
+        font-size: 12px;
+    }
+
+    button.prev, button.next, button.prev-esfirra, button.next-esfirra {
         padding: 8px;
     }
 }
+
+
+
+/* Estilo da notificação estilo aplicativo */
+.notification {
+    position: fixed;
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da borda direita */
+    background-color: #333; /* Cor de fundo escura */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 16px;
+    max-width: 300px; /* Largura máxima */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 25s ease, transform 25s ease; /* Transições suaves */
+    transform: translateY(-20px); /* Começa fora de vista */
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 2; /* Torna visível quando a classe 'show' é adicionada */
+    transform: translateY(0); /* Move para a posição visível */
+}
+
+.notification.hide {
+    opacity: 0; /* Torna invisível quando a classe 'hide' é adicionada */
+    transform: translateY(-20px); /* Move para fora de vista */
+}
+
 
